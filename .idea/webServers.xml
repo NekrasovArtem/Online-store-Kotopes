@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="981639d8-c570-487c-a9fa-808c4e41832e" name="kotopes" url="http://KOTOPES.LH1.IN">
+        <fileTransfer rootFolder="/www/kotopes.lh1.in" host="KOTOPES.LH1.IN" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

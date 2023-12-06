@@ -1,5 +1,4 @@
 <?php
-
 const CATEGORIES = [
     [
         "name" => "Кошки",
@@ -30,26 +29,29 @@ const CATEGORIES = [
         "link" => "catalog.php",
     ],
 ];
+
 ?>
 <header>
     <section class="header__top">
-        <div class="header__logo">
-            <img src="./images/menu.svg" alt="Меню">
-            <img src="./images/logo.svg" alt="КотоПес">
+        <div class="header__left">
+            <?php if ($whiteMenu): ?>
+            <img src="/images/burger_menu.svg" alt="Меню">
+            <?php else: ?>
+            <img src="/images/main_burger_menu.svg" alt="Меню">
+            <?php endif; ?>
+            <a href="/"><img src="/images/logo.svg" alt="КотоПес"></a>
         </div>
         <div class="header__searc">
             <input type="search" name="" id="" placeholder="Поиск">
-            <span><img src="./images/search.svg"></span>
+            <span><img src="/images/search.svg"></span>
         </div>
-        <div>
-            <div class="header__busket">
-                <img src="./images/busket.svg" alt="Корзина">
-                <span>Корзина</span>
-            </div>
-            <div class="header__profile">
-                <img src="./images/profile.svg" alt="Аккаунт">
-                <span>Аккаунт</span>
-            </div>
+        <div class="header__right">
+            <a href="/busket" class="header__busket">
+                <img src="/images/busket.svg" alt="Корзина">
+            </a>
+            <a href="/login" class="header__profile">
+                <img src="/images/profile.svg" alt="Аккаунт">
+            </a>
         </div>
     </section>
     <section class="header__down">

@@ -4,7 +4,7 @@
 
 <a href="https://www.figma.com/file/srz2jD5Pf5rdCQOPasSzAY/">Макет сайта</a>
 
-<img src="https://kappa.lol/bTlWw" />
+<img src="https://kappa.lol/xf8V7" />
 
 ### Используемые технологии:
 - HTML5

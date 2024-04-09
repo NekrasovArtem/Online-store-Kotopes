@@ -474,7 +474,7 @@ a {
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    gap: 100px;
+    gap: 50px;
     padding: 0;
     border-radius: 0;
     background: none;
@@ -531,8 +531,60 @@ a {
     align-items: center;
 }
 
+.basket__item-name {
+    align-items: flex-start;
+}
+
 .basket__item-name > h3 {
     font-size: 28px;
+}
+
+.basket__item-description {
+    width: 100%;
+    height: auto;
+}
+
+.basket__item-description > p {
+    font-size: 1 4px;
+}
+
+.basket__item-price {
+    font-size: 24px;
+}
+
+.basket__item-price input {
+    width: 50px;
+    height: auto;
+    text-align: end;
+    font-size: 24px;
+    border: none;
+    border-bottom: 1px solid #000;
+}
+
+.basket__item-price input:focus {
+    outline: none;
+}
+
+.basket__item-delete {
+    width: 100px;
+    height: auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.basket__item-delete > button {
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: none;
+}
+
+.basket__item-delete > button > img {
+    width: 100%;
+    height: 100%;
 }
 
 .basket__form {
@@ -542,11 +594,54 @@ a {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    gap: 20px;
-    padding: 10px;
+    gap: 30px;
+    padding: 20px 40px;
     border-radius: 1rem;
     background: #FFF;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.basket__form > h3 {
+    font-size: 32px;
+}
+
+.basket__form-price {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    font-size: 24px;
+}
+
+.basket__form > input {
+    width: 100%;
+    height: 32px;
+    font-size: 24px;
+    padding: 5px;
+    border: none;
+    border-bottom: 3px solid #000;
+}
+
+.basket__form > input:focus {
+    outline: none;
+}
+
+.basket__form > button {
+    cursor: pointer;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    text-align: center;
+    font-size: 24px;
+    color: #FFF;
+    border: 1px solid var(--actionColor);
+    border-radius: 0.2rem;
+    background: var(--actionColor);
+}
+
+.basket__form > span {
+    font-size: 18px;
 }
 
 /* Корзинка конец */

@@ -1,9 +1,9 @@
 <?php
 class KotoPes {
-    private const string DB_HOST = 'localhost';
-    private const string DB_USER = 'ueremanm_losev_artyom';
-    private const string DB_PASSWORD = 'bwuLN375';
-    private const string DB_NAME = 'ueremanm_db_kotopes';
+    private const DB_HOST = 'localhost';
+    private const DB_USER = 'ueremanm_losev_artyom';
+    private const DB_PASSWORD = 'bwuLN375';
+    private const DB_NAME = 'ueremanm_db_kotopes';
     private mysqli|false $connection;
 
     public function getConnection():false|mysqli
@@ -41,6 +41,12 @@ class KotoPes {
     {
         $sql = "SELECT * FROM users WHERE id='".$id."'";
         return $this->connection->query($sql)->fetch_assoc();
+    }
+
+    public function getPromocodes()
+    {
+        $sql = "SELECT * FROM promocodes";
+        return $this->connection->query($sql);
     }
 
     public function getAllProducts():mysqli_result|bool

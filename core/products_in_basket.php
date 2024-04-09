@@ -4,7 +4,7 @@ header('Content-Type: application/json');
 $KotoPes = new KotoPes();
 $connection = $KotoPes->getConnection();
 
-$numbersArray = [38, 37, 40, 39, 38, 40];
+$numbersArray = json_decode(file_get_contents('php://input'), true);
 $resultIds = [];
 
 // Собираем количество товаров
@@ -26,8 +26,9 @@ foreach ($products as $product) {
         'id' => $product['id'],
         'name' => $product['name'],
         'price' => $product['price'],
+        'count' => $resultIds[strval($product['id'])],
         'url' => $product['image'],
-        'count' => $resultIds[strval($product['id'])]
+        'description' => $product['description'],
     ];
 }
 

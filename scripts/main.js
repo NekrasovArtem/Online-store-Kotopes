@@ -17,7 +17,7 @@ function updateBasketCounter() {
     const basketCounter = document.querySelector('.basket__counter')
     let products = JSON.parse(localStorage.getItem('productsIds'));
     let count = 0;
-
+    
     if (products == null) {
         count = 0;
     } else {

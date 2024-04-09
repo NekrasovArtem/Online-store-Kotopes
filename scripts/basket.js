@@ -9,6 +9,8 @@ const basket = {
             promocodes: null,
             promocode: null,
             orderWay: 'point',
+            orderAddress: 'г. Челябинск, д. 23',
+            payMethod: 'online',
         }
     },
     created() {
@@ -97,6 +99,51 @@ const basket = {
             }
 
             this.orderWay = way
+        },
+        sendOrder() {
+            let userId = document.querySelector('#user-id').value
+            let productsToOrder = []
+
+            for (let i = 0; i < this.products.length; i ++) {
+                productsToOrder.push({
+                    'id': this.products[i].id,
+                    'quantity': this.products[i].count,
+                    'price': this.products[i].price,
+                })
+            }
+
+            console.log({
+                'id_user': userId,
+                'status': 'waiting',
+                'address': this.orderAddress,
+                'order_type': this.orderWay,
+                'pay_method': this.payMethod,
+                'products': productsToOrder,
+                'date': new Date(),
+            });
+
+            // fetch('./core/send_order.php', {
+            //     method: 'POST',
+            //     headers: {
+            //         'Content-Type': 'application/json'
+            //     },
+            //     body: JSON.stringify({
+            //         'id_user': userId,
+            //         'status': 'waiting',
+            //         'address': this.orderAddress,
+            //         'order_type': this.orderWay,
+            //         'pay_method': this.payMethod,
+            //         'products': productsToOrder,
+            //         'date': new Date(),
+            //     })
+            // })
+            // .then(response => response.json())
+            // .then(data => {
+            //     console.log(data)
+            // })
+
+            // localStorage.removeItem('productsIds')
+            // updateBasketCounter()
         }
     },
 }

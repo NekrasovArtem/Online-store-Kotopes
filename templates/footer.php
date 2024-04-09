@@ -110,7 +110,6 @@ const INFO_LINKS = [
     </div>
 </footer>
 <?php if ($path === $serverPath . '/basket'): ?>
-    <script src="<?= $sitePath ?>/scripts/jquery-3.7.1.min.js"></script>
     <script src="<?= $sitePath ?>/scripts/vue.global.js"></script>
     <script src="<?= $sitePath ?>/scripts/basket.js"></script>
 <?php endif; ?>

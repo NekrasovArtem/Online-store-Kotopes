@@ -62,6 +62,13 @@ class KotoPes {
         return $products;
     }
 
+    public function getProduct($id)
+    {
+        $sql = "SELECT * FROM products WHERE id=$id";
+        $result = $this->connection->query($sql)->fetch_assoc();
+        return $result;
+    }
+
     public function getProducts($productsIds)
     {
         $ids = implode(',', $productsIds);
@@ -140,5 +147,12 @@ class KotoPes {
          JOIN categories ON products.id_cat=categories.id
          ORDER BY timestamp DESC LIMIT 10";
         return $this->connection->query($sql);
+    }
+
+    public function createOrder()
+    {
+        $sql = "INSERT INTO orders (id_order, id_user, id_product, quantity, price, date, address, status, order_type, pay_method)
+        VALUES ()";
+        return $sql;
     }
 }

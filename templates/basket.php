@@ -34,10 +34,6 @@
             </div>
             <div class="basket__form">
                 <h3>Ваш заказ</h3>
-                <div>
-                    <span>Товаров: </span>
-                    <!-- <span>{{ products.length }}</span> -->
-                </div>
                 <div class="basket__form-price">
                     <span>Итого:</span>
                     <span>{{ +originalPrice - (+originalPrice * +promoDiscount).toFixed(2) }} руб.</span>
@@ -54,8 +50,8 @@
             <div class="order__left">
                 <div class="order__way">
                     <h3>Способ получения:</h3>
-                    <label for="order-way-1"><input type="radio" name="order-way" id="order-way-1" v-on:change="orderWay = 'point'" checked />Пункт выдачи</label>
-                    <label for="order-way-2"><input type="radio" name="order-way" id="order-way-2" v-on:change="orderWay = 'courier'" />Курьером | 199 руб.</label>
+                    <label for="order-way-1"><input type="radio" name="order-way" id="order-way-1" v-on:change="changeOrderWay('point')" checked />Пункт выдачи</label>
+                    <label for="order-way-2"><input type="radio" name="order-way" id="order-way-2" v-on:change="changeOrderWay('courier')" />Курьером | 199 руб.</label>
                 </div>
                 <div class="order__address" v-show="orderWay === 'point'">
                     <h3>Адрес пункта выдачи: ул. Российская, д23</h3>
@@ -75,24 +71,36 @@
                 </div>
                 <div class="order__address" v-show="orderWay === 'courier'">
                     <h3>Курьером</h3>
+                    <input type="text" placeholder="Адрес" v-model="orderAddress" />
+                </div>
+            </div>
+            <div class="order__middle">
+                <div class="order__recipient">
+                    <h3>Ваши данные:</h3>
+                    <?php
+                    $user = $KotoPes->getUserData($_SESSION['id']);
+                    ?>
+                    <div class="order__recipient-data">
+                        <input type="hidden" name="" id="user-id" value="<?= $_SESSION['id'] ?>" />
+                        <input type="text" name="" id="" placeholder="Фамилия" value="<?= $user['surname'] ?>" readonly />
+                        <input type="text" name="" id="" placeholder="Имя" value="<?= $user['name'] ?>" readonly />
+                        <input type="tel" name="" id="" placeholder="Телефон" value="<?= $user['phone'] ?>" readonly />
+                        <input type="email" name="" id="" placeholder="Почта" value="<?= $user['email'] ?>" readonly />
+                        <!-- <input type="text" name="" id="" placeholder="Адрес" value="<?= $user['address'] ?>" readonly /> -->
+                    </div>
+                    <span>Сообщим статус заказа уведомлением на почту</span>
                 </div>
             </div>
             <div class="order__right">
-                <div class="order__recipient">
-                    <h3>Укажите данные, если необходимо:</h3>
-                    <div class="order__recipient-data">
-                        <input type="text" name="" id="" placeholder="Фамилия" value="" readonly />
-                        <input type="text" name="" id="" placeholder="Имя" value="" readonly />
-                        <input type="tel" name="" id="" placeholder="Телефон" value="" readonly />
-                        <input type="email" name="" id="" placeholder="Почта" value="" readonly />
-                        <input type="text" name="" id="" placeholder="Адрес" value="" readonly />
-                    </div>
-                    <span>Сообщим статус заказа уведомлением на почту</span>
+                <div class="order__pay-method">
+                    <h3>Способ оплаты:</h3>
+                    <label for="pay-method-1"><input type="radio" name="pay-method" id="pay-method-1" v-on:change="payMethod = 'online'" checked />Онлайн картой</label>
+                    <label for="pay-method-2"><input type="radio" name="pay-method" id="pay-method-1" v-on:change="payMethod = 'inpoint'" />Картой при получении</label>
                 </div>
                 <div class="order__pay">
                     <h3>Ваш заказ:</h3>
                     <div>
-                        <span>Товары:</span>
+                        <span>Стоимость:</span>
                         <span>{{ originalPrice }} руб.</span>
                     </div>
                     <div>
@@ -109,7 +117,7 @@
                     </div>
                     <div>
                         <button v-on:click="activePage = 'basket'">Назад</button>
-                        <button>Оплатить</button>
+                        <button v-on:click="sendOrder()">Оплатить</button>
                     </div>
                 </div>
             </div>

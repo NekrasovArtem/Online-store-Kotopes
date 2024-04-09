@@ -2,3 +2,6 @@
 .vscode
 core
 adminer-4.8.1-mysql.php
+scripts/iziModal.js
+scripts/vue.global.js
+scripts/swiper-bundle.min.js

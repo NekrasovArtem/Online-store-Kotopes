@@ -9,14 +9,18 @@ $title = "КотоПес - Подробнее о товаре";
 $pagePath = "/product";
 $whiteMune = false;
 $pageDescription = 'Описание товара';
+
+$novelties = $KotoPes->getNoveltyProducts();
+
 ?>
 <?php require "../templates/header.php"; ?>
     <main>
         <section class="card">
+<?php foreach ($novelties as $novelty): ?>
             <div class="box_img">
-                <img class = "product_img" src="https://cdn1.ozone.ru/s3/multimedia-1/6491008681.jpg?>" alt="Изображение товара" / >
+                <img class = "product_img" src="/images/products/<?= $novelty['image'] ?>" alt="Изображение товара" / >
                 <div class="product_name"><span class="text">Farmina Vet Life Struvite Management диетический сухой корм для кошек при мочекаменной болезни, с курицей, 400г</span></div>
-                <span class="product_price">939 ₽</span> <span class="product_kolvo">Кол-во: 1/шт</span>
+                <span class="product_price"><?= $novelty['price'] ?> ₽</span> <span class="product_kolvo">Кол-во: <?= $novelty['price'] ?>/шт</span>
 
                 <button class="product_button" onclick="addProductInBusket(<?= $novelty['id'] ?>)">В корзину</button>
                 <div class="tovar"> О товаре

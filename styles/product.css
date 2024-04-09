@@ -1,0 +1,129 @@
+@font-face {
+    font-family: "Montserrat";
+    font-weight: 400;
+    font-style: normal;
+    src: url("/fonts/Montserrat-Regular.woff2") format("woff2");
+    font-display: swap;
+}
+.card{
+    width: 1437px;
+    height: 1305px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 1rem;
+    background-color: #FFFFFF;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+}
+.box_img{
+    width: 500px;
+    height: 500px;
+    background-color: gray;
+    position: relative;
+    left: -440px;
+    top: -358px;
+    background-color: #FFFFFF;
+}
+.product_img{
+    width: 90%;
+    height: 500px;
+    position: relative;
+    left: 20px;
+}
+.product_name{
+    width: 791px
+}
+.text{
+    color: #494949;
+    font-size: 36px;
+    font-weight: 600;
+    position: relative;
+    left: 615px;
+    top: -490px;
+}
+.product_price{
+    width: 196px;
+    height: 58px;
+    color: #494949;
+    font-size: 48px;
+    font-weight: 600;
+    right: -883px;
+    top: -240px;
+    position: relative;
+}
+.product_kolvo{
+    width: 304px;
+    height: 58px;
+    color: #494949;
+    font-size: 48px;
+    font-weight: 600;
+    right: -950px;
+    top: -240px;
+    position: relative;
+}
+button {
+    transition: all 0.2s ease-in-out;
+}
+.product_button{
+    cursor: pointer;
+    width: 500px;
+    height: 70px;
+    padding: 5px;
+    border: none;
+    border-radius: 0.7rem;
+    font-size: 40px;
+    font-weight: 600;
+    color: #FFFFFF;
+    background-color: var(--actionColor);
+    right: -883px;
+    top: -230px;
+    position: relative;
+}
+.text_tovar{
+
+}
+.tovar{
+    position: relative;
+    top: -100px;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 1357px;
+    color: #494949;
+    font-size: 40px;
+    font-weight: 600;
+}
+.text_description{
+    width: 1357px;
+    color: #494949;
+    font-size: 24px;
+    font-weight: 600;
+}
+.сharact{
+    gap: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    color: #494949;
+    font-size: 40px;
+    font-weight: 600;
+}
+.charact_brend{
+    color: #494949;
+    font-size: 32px;
+    font-weight: 600;
+}
+.charact_country{
+    color: #494949;
+    font-size: 32px;
+    font-weight: 600;
+}
+.charact_weight{
+    color: #494949;
+    font-size: 32px;
+    font-weight: 600;
+}
+.text_tovar {
+    color: #494949;
+    font-size: 28px;
+}

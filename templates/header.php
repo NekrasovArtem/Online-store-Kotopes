@@ -49,6 +49,7 @@ const CATEGORIES = [
     <meta property="og:url" content="<?= $pageUrl ?>" />
     <link rel="shortcut icon" href="<?= $sitePath ?>/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="<?= $sitePath ?>/styles/main.css" />
+    <link rel="stylesheet" href="<?= $sitePath ?>/styles/product.css" />
     <?php if ($path === $serverPath . ''): ?>
         <link rel="stylesheet" href="<?= $sitePath ?>/styles/index.css" />
         <link rel="stylesheet" href="<?= $sitePath ?>/styles/swiper-bundle.min.css" />

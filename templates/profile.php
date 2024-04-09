@@ -68,7 +68,6 @@
                 </div>
             </div>
             <div class="profile__buttons">
-                <button onclick="addCookie(3)">Добавить куку</button>
                 <?php if ($user['role'] === 'admin'): ?>
                     <a href="/dashboard">AdminPanel</a>
                 <?php endif; ?>

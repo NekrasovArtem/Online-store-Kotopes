@@ -5,8 +5,10 @@ const basket = {
             products: null,
             originalPrice: 0,
             promoDiscount: 0,
+            deliveryPrice: 0,
             promocodes: null,
             promocode: null,
+            orderWay: 'point',
         }
     },
     created() {
@@ -86,6 +88,15 @@ const basket = {
         },
         createOrder() {
             this.activePage = 'order'
+        },
+        changeOrderWay(way) {
+            if (way === 'courier') {
+                this.deliveryPrice = 199
+            } else {
+                this.deliveryPrice = 0
+            }
+
+            this.orderWay = way
         }
     },
 }

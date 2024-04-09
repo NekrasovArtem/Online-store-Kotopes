@@ -174,6 +174,10 @@ main {
     gap: 50px;
 }
 
+button {
+    transition: all 0.2s ease-in-out;
+}
+
 .poster {
     width: 100%;
     max-width: 1920px;
@@ -553,12 +557,22 @@ a {
 }
 
 .basket__item-price input {
-    width: 50px;
+    position: relative;
+    width: 32px;
     height: auto;
-    text-align: end;
+    text-align: start;
     font-size: 24px;
     border: none;
     border-bottom: 1px solid #000;
+}
+
+.basket__item-price input::-webkit-inner-spin-button  {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 18px;
+    background: #000;
 }
 
 .basket__item-price input:focus {
@@ -640,8 +654,124 @@ a {
     background: var(--actionColor);
 }
 
+.basket__form > button:hover {
+    background: #c55b1d;
+}
+
 .basket__form > span {
     font-size: 18px;
 }
 
 /* Корзинка конец */
+
+/* Оформление заказа */
+.order {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.order__wrapper {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 80px;
+}
+
+.order__left {
+    width: 680px;
+}
+
+.order__right {
+    width: 480px;
+}
+
+.order__left, .order__right  {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px;
+}
+
+.order__left > div, .order__right > div {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    background: #FFF;
+    border-radius: 1rem;
+    box-shadow:  0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.order__way > label {
+    width: auto;
+    height: auto;
+    display: flex;
+    gap: 10px;
+    font-size: 20px;
+}
+
+.order__address {
+    width: 680px;
+    height: auto;
+}
+
+.order__address-point {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.order__address-point > iframe {
+    width: 100%;
+    height: 280px;
+    border: none;
+    border-radius: 1rem;
+}
+
+.order__pay {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.order__pay > div {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.order__pay > div > span {
+    font-size: 24px;
+}
+
+.order__pay button {
+    cursor: pointer;
+    width: auto;
+    height: auto;
+    padding: 5px 10px;
+    color: #FFF;
+    border: 1px solid var(--actionColor);
+    border-radius: 0.5rem;
+    background: var(--actionColor);
+}
+
+.order__pay button:hover {
+    background: #c55b1d;
+}

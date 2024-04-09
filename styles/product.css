@@ -41,13 +41,19 @@
     left: 615px;
     top: -490px;
 }
+.card_kol{
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+    position: relative;
+    right: -890px;
+}
 .product_price{
     width: 196px;
     height: 58px;
     color: #494949;
     font-size: 48px;
     font-weight: 600;
-    right: -883px;
     top: -240px;
     position: relative;
 }
@@ -57,7 +63,6 @@
     color: #494949;
     font-size: 48px;
     font-weight: 600;
-    right: -950px;
     top: -240px;
     position: relative;
 }

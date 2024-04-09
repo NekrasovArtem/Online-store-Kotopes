@@ -149,10 +149,19 @@ class KotoPes {
         return $this->connection->query($sql);
     }
 
-    public function createOrder()
+    public function createOrder($order)
     {
-        $sql = "INSERT INTO orders (id_order, id_user, id_product, quantity, price, date, address, status, order_type, pay_method)
-        VALUES ()";
-        return $sql;
+        $permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $orderId = '';
+
+        for ($i = 0; $i < 16; $i++) {
+            $orderId .= $permitted_chars[rand(0, strlen($permitted_chars))];
+        }
+
+        $sql = "INSERT INTO orders (id_order, id_user, id_product, quantity, price, date, address, status, order_type, pay_method, order_price)
+        VALUES ('".$orderId."', '".$order['id_user']."', '".$order['id_product']."', '".$order['quantity']."', '".$order['price']."', 
+        '".$order['date']."', '".$order['address']."', '".$order['status']."', '".$order['order_type']."', '".$order['pay_method']."', '".$order['order_price']."')";
+        
+        return $this->connection->query($sql);
     }
 }

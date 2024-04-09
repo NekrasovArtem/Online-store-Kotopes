@@ -106,44 +106,32 @@ const basket = {
 
             for (let i = 0; i < this.products.length; i ++) {
                 productsToOrder.push({
-                    'id': this.products[i].id,
+                    'id_user': userId,
+                    'status': 'waiting',
+                    'address': this.orderAddress,
+                    'order_type': this.orderWay,
+                    'pay_method': this.payMethod,
+                    'id_product': this.products[i].id,
                     'quantity': this.products[i].count,
                     'price': this.products[i].price,
+                    'date': new Date(),
+                    'order_price': this.originalPrice - (this.originalPrice * this.promoDiscount).toFixed(2) + this.deliveryPrice
                 })
             }
 
-            console.log({
-                'id_user': userId,
-                'status': 'waiting',
-                'address': this.orderAddress,
-                'order_type': this.orderWay,
-                'pay_method': this.payMethod,
-                'products': productsToOrder,
-                'date': new Date(),
-            });
-
-            // fetch('./core/send_order.php', {
-            //     method: 'POST',
-            //     headers: {
-            //         'Content-Type': 'application/json'
-            //     },
-            //     body: JSON.stringify({
-            //         'id_user': userId,
-            //         'status': 'waiting',
-            //         'address': this.orderAddress,
-            //         'order_type': this.orderWay,
-            //         'pay_method': this.payMethod,
-            //         'products': productsToOrder,
-            //         'date': new Date(),
-            //     })
-            // })
-            // .then(response => response.json())
-            // .then(data => {
-            //     console.log(data)
-            // })
-
-            // localStorage.removeItem('productsIds')
-            // updateBasketCounter()
+            fetch('/core/send_order.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(productsToOrder)
+            })
+            .then(response => response.json())
+            .then(data => {
+                localStorage.setItem('productsIds', null)
+                updateBasketCounter()
+                location.reload()
+            })
         }
     },
 }

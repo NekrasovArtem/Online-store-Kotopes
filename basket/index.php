@@ -5,10 +5,6 @@ require "../core/core.php";
 $KotoPes = new KotoPes();
 $connection = $KotoPes->getConnection();
 
-//if (!isset($_SESSION['id'])) {
-//  Header("Location: /");
-//}
-
 $title = 'КотоПёс - Корзина';
 $pagePath = "/basket";
 $whiteMenu = false;

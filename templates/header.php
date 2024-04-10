@@ -60,11 +60,13 @@ const CATEGORIES = [
 <header>
     <section class="header__top">
         <div class="header__left">
-            <?php if ($path === $serverPath . ''): ?>
-            <img src="/images/burger_menu.svg" alt="Меню">
-            <?php else: ?>
-            <img src="/images/main_burger_menu.svg" alt="Меню">
-            <?php endif; ?>
+            <a href="/catalog">
+                <?php if ($path === $serverPath . ''): ?>
+                <img src="/images/burger_menu.svg" alt="Меню">
+                <?php else: ?>
+                <img src="/images/main_burger_menu.svg" alt="Меню">
+                <?php endif; ?>
+            </a>
             <a href="/"><img src="/images/logo.svg" alt="КотоПес"></a>
         </div>
         <div class="header__search">

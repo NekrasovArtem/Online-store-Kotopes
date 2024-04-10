@@ -75,6 +75,28 @@ class KotoPes {
         $sql = "SELECT * FROM products WHERE id in ($ids)";
         return $this->connection->query($sql);
     }
+    
+    public function getCatalog()
+    {
+        $sql = "SELECT * FROM products";
+        $result = $this->connection->query($sql);
+        return $result;
+    }
+    public function getProductsWithCategory($categoryName)
+    {
+        $categoryId = $this->getCategoryFromName($categoryName);
+
+        $sql = "SELECT * FROM products WHERE id_cat='".$categoryId."'";
+
+        return $this->connection->query($sql);
+    }
+
+    private function getCategoryFromName($category)
+    {
+        $sql = "SELECT * FROM categories WHERE name='".$category."'";
+        $result = $this->connection->query($sql)->fetch_assoc();
+        return $result['id'];
+    }
 
     public function getProductsToOrder($ids):mysqli_result|bool
     {

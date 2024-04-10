@@ -1,16 +1,16 @@
 <?php
 session_start();
 
-require ".../core/core.php";
+require "../../core/core.php";
 $KotoPes = new KotoPes();
 $connection = $KotoPes->getConnection();
-
-$title = 'КотоПес - Кошки';
-$pagePath = $serverPath . 'cats';
+$title = 'КотоПёс - Каталог';
+$pagePath = "/catalog";
 $whiteMenu = false;
-?>
-<?php require "./templates/header.php"; ?>
-<main>
+$pageDescription = "Каталог товаров интернет-магазина - Котопес";
 
-</main>
-<?php require "./templates/footer.php"; ?>
+$products = $KotoPes->getProductsWithCategory('Кошки');
+?>
+<?php require "../../templates/header.php"; ?>
+<?php require "../../templates/catalog.php"; ?>
+<?php require "../../templates/footer.php"; ?>

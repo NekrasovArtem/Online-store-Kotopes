@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require "../../core/core.php";
+require "../core/core.php";
 $KotoPes = new KotoPes();
 $connection = $KotoPes->getConnection();
 
@@ -10,8 +10,8 @@ $pagePath = "/catalog";
 $whiteMenu = false;
 $pageDescription = "Каталог товаров интернет-магазина - Котопес";
 
-$products = $KotoPes->getProductsWithCategory('Рептилии');
+$products = $KotoPes->getCatalog();
 ?>
-<?php require "../../templates/header.php"; ?>
-<?php require "../../templates/catalog.php"; ?>
-<?php require "../../templates/footer.php"; ?>
+<?php require "../templates/header.php"; ?>
+<?php require "../templates/catalog.php"; ?>
+<?php require "../templates/footer.php"; ?>

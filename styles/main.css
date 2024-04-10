@@ -835,3 +835,117 @@ a {
 .order__pay button:hover {
     background: #c55b1d;
 }
+
+/* Каталог */
+.catalog {
+    max-width: 1440px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 57px;
+}
+
+.catalog__filter {
+    width: 380px;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 10px;
+    border-radius: 1rem;
+    background: #FFF;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.catalog__filter-wrapper {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.catalog__filter-item {
+    width: auto;
+    height: auto;
+    display: flex;
+    gap: 10px;
+    font-size: 18px;
+}
+
+.catalog__wrapper {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.catalog__item {
+    width: 250px;
+    height: 360px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 1rem;
+    background: #FFF;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.catalog__item-name {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.catalog__item-name > img {
+    width: 100%;
+    height: auto;
+    
+}
+
+.catalog__item-name > a {
+    font-size: 18px;
+    font-weight: 600;
+    color: #000;
+}
+
+.catalog__item-price {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.catalog__item-price > span {
+    font-size: 20px;
+}
+
+.catalog__item-price > button {
+    width: auto;
+    height: auto;
+    padding: 5px 10px;
+    font-size: 20px;
+    color: #FFF;
+    border: 1px solid #FF8642;
+    border-radius: 0.5rem;
+    background: #FF8642;
+}
+
+.catalog__item-price > button:hover {
+    background: #c55b1d;
+}

@@ -10,8 +10,13 @@
 - HTML5
 - CSS3
 - JavaScript
-- VueJS
 - PHP
+
+### Фреймворки и библиотеки:
+- VueJS
+- jQuery
+- iziModal.js
+- swiper.js
 
 ### Типы пользователей:
 - Гость

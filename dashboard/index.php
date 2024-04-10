@@ -17,12 +17,12 @@ $pageDescription = 'Панель администритора интернет-�
 
 if (isset($_POST['addNewCategory'])) {
     $KotoPes->addNewCategory($_POST['categoryName']);
-    Header("Location: /dashboard/?categories");
+    Header("Location: /dashboard/?template=categories");
 }
 
 if (isset($_POST['addNewSubcategory'])) {
     $KotoPes->addNewSubcategory($_POST['subcategoryName']);
-    Header("Location: /dashboard/?categories");
+    Header("Location: /dashboard/?template=categories");
 }
 
 if (isset($_POST['addNewProduct'])) {
@@ -45,7 +45,12 @@ if (isset($_POST['addNewProduct'])) {
     }
 
     $KotoPes->addNewProduct($newProduct);
-    Header("Location: /dashboard/?products");
+    Header("Location: /dashboard/?template=products");
+}
+
+if (isset($_POST['addNewPromocode'])) {
+    $KotoPes->addNewPromocode($_POST['promo'], $_POST['discount']);
+    Header('Location: /dashboard/?template=promocodes');
 }
 ?>
 

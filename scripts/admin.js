@@ -24,3 +24,5 @@ $("#addSubcategoryModal").iziModal(iziModalRules);
 $("#clientInfo").iziModal(iziModalRules);
 
 $("#addProductModal").iziModal(iziModalProductsRules);
+
+$("#addNewPromocode").iziModal(iziModalRules);

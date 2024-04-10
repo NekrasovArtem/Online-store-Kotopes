@@ -49,6 +49,12 @@ class KotoPes {
         return $this->connection->query($sql);
     }
 
+    public function addNewPromocode($promo, $discount)
+    {
+        $sql = "INSERT INTO promocodes (promo, discount) VALUES ('".$promo."', '".$discount."')";
+        return $this->connection->query($sql);
+    }
+
     public function getAllProducts():mysqli_result|bool
     {
         $sql = "SELECT products.id, products.name, categories.name as category, subcategories.name as subcategory, products.image, products.brand, products.quantity, products.price

@@ -1,13 +1,13 @@
 <main id="basket">
     <section class="basket" v-if="activePage === 'basket'">
         <h2>Корзина</h2>
-        <div class="basket__delete">
+        <!-- <div class="basket__delete">
             <label for="select-all">
                 <input type="checkbox" name="" id="select-all" />
                 Выбрать всё
             </label>
             <button id="btn-get">Удалить выбранные</button>
-        </div>
+        </div> -->
         <div class="basket__wrapper">
             <div class="basket__items">
                 <div class="basket__item" v-for="(item, index) in products" key="item">
@@ -18,7 +18,7 @@
                         <div class="basket__item-name">
                             <h3>{{ item.name }}</h3>
                             <div class="basket__item-delete">
-                                <input class="" type="checkbox" name="" id="" value="{{ item.id }}" />
+                                <!-- <input class="" type="checkbox" name="" id="" value="{{ item.id }}" /> -->
                                 <button type="button" @click="removeProduct(item.id)"><img src="<?= $sitePath ?>/images/icon-trashcan.svg" alt="Удалить"></button>
                             </div>
                         </div>

@@ -34,7 +34,7 @@ $path = $serverPath . $pagePath;
             <a href="?">Главная</a>
             <a href="?template=slider">Слайдер</a>
             <a href="?template=stocks">Акции</a>
-            <a href="?template=news">Новости</a>
+            <a href="?template=promocodes">Промокоды</a>
             <a href="?template=clients">Клиенты</a>
             <a href="?template=products">Товары</a>
             <a href="?template=categories">Категории</a>

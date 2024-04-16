@@ -69,7 +69,7 @@ $products = $KotoPes->getAllProducts();
                 <button class="delete">Удалить</button>
             </div>
         </div>
-        <table>
+        <table class="categories">
             <thead>
             <tr>
                 <td>ID</td>

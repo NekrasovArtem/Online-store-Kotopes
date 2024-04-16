@@ -175,6 +175,7 @@ main {
 }
 
 button {
+    border: none;
     transition: all 0.2s ease-in-out;
 }
 
@@ -346,6 +347,113 @@ form > .submit:hover {
     border: none;
 }
 
+.profile__div {
+    width: 100%;
+    max-width: 1440px;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.profile__div > div {
+    width: 360px;
+    height: 280px;
+}
+
+.profile__payments {
+    width: 1020px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 1rem;
+    background: #FFF;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.profile__payments > h3 {
+    font-size: 24px;
+}
+
+.payments__cards {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.bank-card {
+    width: 300px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    color: #FFF;
+    padding: 20px;
+    border-radius: 0.5rem;
+    background: #494949;
+}
+
+.bank-card > h4 {
+    font-size: 28px;
+}
+
+.bank-card > span {
+    font-size: 24px;
+}
+
+.bank-card > div {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 24px;
+}
+
+.blank-bank-card {
+    width: 300px;
+    height: 180px;
+    border: 2px solid #494949;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+}
+
+.blank-bank-card > img {
+    width: auto;
+    height: auto;
+}
+
+.profile__discount {
+    width: 100%;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    border-radius: 1rem;
+    background: #FFF;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.profile__discount > h3 {
+    font-size: 24px;
+}
+
+.profile__discount > span {
+    font-size: 48px;
+    color: #FF8642;
+    text-decoration: underline;
+}
 
 footer {
     width: 100%;
@@ -381,9 +489,10 @@ footer {
     color: var(--actionColor);
 }
 
-.footer__column > h3 {
+.footer__column > a {
     font-size: 38px;
     font-weight: bold;
+    text-decoration: none;
     color: var(--actionColor);
 }
 
@@ -649,7 +758,6 @@ a {
     text-align: center;
     font-size: 24px;
     color: #FFF;
-    border: 1px solid var(--actionColor);
     border-radius: 0.5rem;
     background: var(--actionColor);
 }
@@ -827,13 +935,32 @@ a {
     padding: 5px 10px;
     color: #FFF;
     font-size: 24px;
-    border: 1px solid var(--actionColor);
     border-radius: 0.5rem;
     background: var(--actionColor);
 }
 
 .order__pay button:hover {
     background: #c55b1d;
+}
+
+.basket__empty {
+    width: 100%;
+    min-height: 30vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.basket__empty > h2 {
+    font-size: 52px;
+}
+
+.basket__empty > img {
+    width: 500px;
+    height: auto;
 }
 
 /* Каталог */
@@ -936,12 +1063,12 @@ a {
 }
 
 .catalog__item-price > button {
+    cursor: pointer;
     width: auto;
     height: auto;
     padding: 5px 10px;
     font-size: 20px;
     color: #FFF;
-    border: 1px solid #FF8642;
     border-radius: 0.5rem;
     background: #FF8642;
 }

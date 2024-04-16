@@ -207,6 +207,19 @@ section {
     font-size: 42px;
 }
 
+.heading .search-btn {
+    width: auto;
+    height: auto;
+    padding: 5px 10px;
+    font-size: 20px;
+    color: #FFF;
+    background: #56C86F;
+}
+
+.heading .search-btn:hover {
+    background: #2b7a3c;
+}
+
 .heading > div {
     width: auto;
     height: auto;
@@ -324,4 +337,26 @@ td > img {
 
 .client__info > span {
     font-size: 18px;
+}
+
+.orders > thead > tr > td {
+    height: auto;
+    font-size: 22px;
+    font-weight: bold;
+    background: #F7F7FA;
+}
+
+.orders > tbody > tr > td {
+    height: auto;
+    font-size: 20px;
+}
+
+.orders > thead > tr > td:nth-child(1),
+.orders > tbody > tr > td:nth-child(1) {
+    width: 50px;
+    text-align: center;
+}
+
+.orders > tbody > tr:nth-child(odd) {
+    background: #FFF;
 }

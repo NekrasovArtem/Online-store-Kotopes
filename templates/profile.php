@@ -68,6 +68,7 @@
                 </div>
             </div>
             <div class="profile__buttons">
+                <a href="/core/logout.php">Выйти</a>
                 <?php if ($user['role'] === 'admin'): ?>
                     <a href="/dashboard">AdminPanel</a>
                 <?php endif; ?>
@@ -75,24 +76,39 @@
             </div>
         </section>
     <?php endif; ?>
-    <div>
+    <div class="profile__div">
         <section class="profile__payments">
             <h3>Способы оплаты:</h3>
             <div class="payments__cards">
                 <div class="bank-card">
                     <h4>Сбер банк</h4>
-                    <span>**** **** **** 0000</span>
-                    <span></span>
+                    <div>
+                        <span>****</span>
+                        <span>****</span>
+                        <span>****</span>
+                        <span>0000</span>
+                    </div>
+                    <span>00/00</span>
+                </div>
+                <div class="bank-card">
+                    <h4>Тинькофф</h4>
+                    <div>
+                        <span>****</span>
+                        <span>****</span>
+                        <span>****</span>
+                        <span>0000</span>
+                    </div>
+                    <span>00/00</span>
+                </div>
+                <div class="blank-bank-card">
+                    <img src="/images/blank-bank-card.svg" alt="Привязать новую карту">
                 </div>
             </div>
         </section>
         <div>
             <section class="profile__discount">
                 <h3>Персональная скидка:</h3>
-                <h3><?= $user['discount'] ?>%</h3>
-            </section>
-            <section class="profile__logout">
-                <a href="/core/logout.php"><button>Выйти</button></a>
+                <span><?= $user['discount'] ?>%</span>
             </section>
         </div>
     </div>

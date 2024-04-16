@@ -2,17 +2,17 @@
 const SOCIALS_LINKS = [
     [
         "title" => "Инстаграм",
-        "url" => "#",
+        "url" => "https://www.instagram.com/",
         "src" => "/images/instagram.png",
     ],
     [
         "title" => "Телеграм",
-        "url" => "#",
+        "url" => "https://web.telegram.org/",
         "src" => "/images/telegram.png",
     ],
     [
         "title" => "Вконтакте",
-        "url" => "#",
+        "url" => "https://vk.com/",
         "src" => "/images/vkontakte.png",
     ],
 ];
@@ -94,8 +94,8 @@ const INFO_LINKS = [
             </nav>
         </div>
         <div class="footer__column">
-            <h3>8 (800) 555-35-35</h3>
-            <h3>kotopes@mail.ru</h3>
+            <a href="tel:88001234567">8 (800) 123-45-67</a>
+            <a href="mailto:kotopes@mail.ru">kotopes@mail.ru</a>
             <div class="work-time">
                 <span>Время работы:</span>
                 <span>Пн-Пт: 9:00 - 22:00</span>

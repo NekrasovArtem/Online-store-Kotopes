@@ -1,9 +1,11 @@
 .idea
 .vscode
 core
-adminer-4.8.1-mysql.php
 scripts/iziModal.js
-scripts/vue.global.js
+scripts/jquery-3.7.1.min.js
 scripts/swiper-bundle.min.js
+scripts/vue.global.js
 styles/iziModal.css
 styles/swiper-bundle.min.css
+adminer-4.8.1-mysql.php
+google6d3126911355c60e.html

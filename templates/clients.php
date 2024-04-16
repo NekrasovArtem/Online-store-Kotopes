@@ -14,15 +14,15 @@
     </section>
     <?php else: ?>
     <?php $users = $KotoPes->getAllUsers(); ?>
-    <section class="clients">
-        <div class="clients__title">
+    <section class="categories">
+        <div class="heading">
             <h2>Пользователи</h2>
             <div>
                 <input type="search" />
-                <button>Поиск</button>
+                <button class="search-btn">Поиск</button>
             </div>
         </div>
-        <table>
+        <table class="categories">
             <thead>
                 <tr>
                     <td>ID</td>

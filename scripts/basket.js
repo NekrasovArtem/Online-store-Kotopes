@@ -20,31 +20,35 @@ const basket = {
         getProducts() {
             let productsIds = JSON.parse(localStorage.getItem('productsIds'));
 
-            fetch('/core/products_in_basket.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(productsIds)
-            })
-            .then(response => response.json())
-            .then(data => {
-                this.products = data
-                for (let i = 0; i < this.products.length; i++) {
-                    this.originalPrice += this.products[i].price * this.products[i].count
-                }
-            })
+            if (productsIds.length === 0) {
+                this.activePage = 'emptybasket'
+            } else {
+                fetch('/core/products_in_basket.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(productsIds)
+                })
+                .then(response => response.json())
+                .then(data => {
+                    this.products = data
+                    for (let i = 0; i < this.products.length; i++) {
+                        this.originalPrice += this.products[i].price * this.products[i].count
+                    }
+                })
 
-            fetch('/core/get_promocodes.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
-            .then(response => response.json())
-            .then(data => {
-                this.promocodes = data
-            })
+                fetch('/core/get_promocodes.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    this.promocodes = data
+                })
+            }
         },
         removeProduct(id) {
             let newProducts = [];
@@ -100,12 +104,24 @@ const basket = {
 
             this.orderWay = way
         },
+        getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        },
         sendOrder() {
             let userId = document.querySelector('#user-id').value
             let productsToOrder = []
+            let orderId = ''
+            const chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
+            for (let i = 0; i < 16; i++) {
+                orderId += chars[this.getRandomInt(0, chars.length)]
+            }
 
             for (let i = 0; i < this.products.length; i ++) {
                 productsToOrder.push({
+                    'id_order': orderId,
                     'id_user': userId,
                     'status': 'waiting',
                     'address': this.orderAddress,

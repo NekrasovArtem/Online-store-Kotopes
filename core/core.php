@@ -177,17 +177,16 @@ class KotoPes {
         return $this->connection->query($sql);
     }
 
+    public function getAllOrders()
+    {
+        $sql = "SELECT * FROM orders JOIN users ON orders.id_user = users.id GROUP BY id_order";
+        return $this->connection->query($sql);
+    }
+
     public function createOrder($order)
     {
-        $permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        $orderId = '';
-
-        for ($i = 0; $i < 16; $i++) {
-            $orderId .= $permitted_chars[rand(0, strlen($permitted_chars))];
-        }
-
         $sql = "INSERT INTO orders (id_order, id_user, id_product, quantity, price, date, address, status, order_type, pay_method, order_price)
-        VALUES ('".$orderId."', '".$order['id_user']."', '".$order['id_product']."', '".$order['quantity']."', '".$order['price']."', 
+        VALUES ('".$order['id_order']."', '".$order['id_user']."', '".$order['id_product']."', '".$order['quantity']."', '".$order['price']."', 
         '".$order['date']."', '".$order['address']."', '".$order['status']."', '".$order['order_type']."', '".$order['pay_method']."', '".$order['order_price']."')";
         
         return $this->connection->query($sql);

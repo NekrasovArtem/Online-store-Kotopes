@@ -32,12 +32,12 @@ $path = $serverPath . $pagePath;
         </div>
         <nav>
             <a href="?">Главная</a>
-            <a href="?template=slider">Слайдер</a>
-            <a href="?template=stocks">Акции</a>
-            <a href="?template=promocodes">Промокоды</a>
-            <a href="?template=clients">Клиенты</a>
             <a href="?template=products">Товары</a>
             <a href="?template=categories">Категории</a>
+            <!-- <a href="?template=slider">Слайдер</a> -->
+            <a href="?template=orders">Заказы</a>
+            <a href="?template=promocodes">Промокоды</a>
+            <a href="?template=clients">Клиенты</a>
             <a href="/core/logout.php">Выход</a>
         </nav>
     </div>

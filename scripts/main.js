@@ -28,3 +28,34 @@ function updateBasketCounter() {
 }
 
 document.addEventListener('DOMContentLoaded', updateBasketCounter());
+
+function renderCatalog() {
+    const checkboxes = document.querySelectorAll('input[name=check-category]')
+    const products = document.querySelectorAll('.catalog__item')
+    let filter = []
+
+
+    checkboxes.forEach(el => {
+        if (el.checked) {
+            filter.push(el.value)
+        }
+    })
+
+    if (filter.length === 0) {
+        products.forEach(product => {
+            if (product.classList.contains('product__hidden')) {
+                product.classList.remove('product__hidden')
+            }
+        })
+        return true;
+    }
+
+    products.forEach(product => {
+        product.classList.add('product__hidden')
+        filter.forEach(el => {
+            if (product.classList.contains(el)) {
+                product.classList.remove('product__hidden')
+            }
+        })
+    })
+}

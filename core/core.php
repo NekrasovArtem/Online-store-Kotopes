@@ -70,7 +70,10 @@ class KotoPes {
 
     public function getProduct($id)
     {
-        $sql = "SELECT * FROM products WHERE id=$id";
+        $sql = "SELECT products.id, products.name, products.image, products.brand, products.country, products.weight, products.price, products.quantity, products.description, categories.name as category, subcategories.name as subcategory FROM products 
+                JOIN categories ON categories.id=products.id_cat
+                JOIN subcategories ON subcategories.id=products.id_subcat
+                WHERE products.id=$id";
         $result = $this->connection->query($sql)->fetch_assoc();
         return $result;
     }
@@ -84,7 +87,8 @@ class KotoPes {
     
     public function getCatalog()
     {
-        $sql = "SELECT * FROM products";
+        $sql = "SELECT products.*, subcategories.id as subcat_id, subcategories.name as subcat_name, subcategories.en_name as subcat_enname FROM products
+                JOIN subcategories ON subcategories.id = products.id_subcat";
         $result = $this->connection->query($sql);
         return $result;
     }
@@ -92,7 +96,9 @@ class KotoPes {
     {
         $categoryId = $this->getCategoryFromName($categoryName);
 
-        $sql = "SELECT * FROM products WHERE id_cat='".$categoryId."'";
+        $sql = "SELECT products.*, subcategories.id as subcat_id, subcategories.name as subcat_name, subcategories.en_name as subcat_enname FROM products 
+                JOIN subcategories ON subcategories.id = products.id_subcat
+                WHERE products.id_cat='".$categoryId."'";
 
         return $this->connection->query($sql);
     }

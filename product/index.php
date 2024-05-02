@@ -31,11 +31,11 @@ $pageDescription = mb_substr($novelty['description'], 0, 100);
                             <tbody>
                                 <tr>
                                     <td>Категория</td>
-                                    <td></td>
+                                    <td><?= $novelty['category'] ?></td>
                                 </tr>
                                 <tr>
                                     <td>Подкатегория</td>
-                                    <td></td>
+                                    <td><?= $novelty['subcategory'] ?></td>
                                 </tr>
                                 <tr>
                                     <td>Брэнд</td>

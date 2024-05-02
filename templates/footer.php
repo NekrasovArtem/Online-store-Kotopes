@@ -73,7 +73,7 @@ const INFO_LINKS = [
             <h5>Категории</h5>
             <nav class="footer__links">
                 <?php foreach (CATEGORIES as $category): ?>
-                    <a href="<?= $category['link'] ?>"><?= $category['name'] ?></a>
+                    <a href="./catalog<?= $category['link'] ?>"><?= $category['name'] ?></a>
                 <?php endforeach; ?>
             </nav>
         </div>

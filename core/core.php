@@ -189,6 +189,20 @@ class KotoPes {
         return $this->connection->query($sql);
     }
 
+    public function getUserOrders($userId)
+    {
+        $sql = "SELECT products.id, products.name, products.image, products.price
+                FROM orders JOIN products ON orders.id_product=products.id 
+                WHERE orders.id_user=$userId";
+        return $this->connection->query($sql);
+    }
+
+    public function getUserReceipts($userId)
+    {
+        $sql = "SELECT * FROM orders WHERE orders.id_user=$userId GROUP BY id_order";
+        return $this->connection->query($sql);
+    }
+
     public function createOrder($order)
     {
         $sql = "INSERT INTO orders (id_order, id_user, id_product, quantity, price, date, address, status, order_type, pay_method, order_price)

@@ -67,7 +67,7 @@ $novelties = $KotoPes->getNoveltyProducts();
                             <div class="product__wrapper">
                                 <img class="product__image" src="/images/products/<?= $novelty['image'] ?>" alt="Изображение товара" loading="lazy" />
                                 <span class="product__price"><?= $novelty['price'] ?> ₽</span>
-                                <a href="/catalog/<?= $novelty['url_name'] ?>/?id=<?= $novelty['id'] ?>" class="product__name"><?= mb_substr($novelty['name'], 0, 28) . '...' ?></a>
+                                <a href="/product/?id=<?= $novelty['id'] ?>" class="product__name"><?= mb_substr($novelty['name'], 0, 28) . '...' ?></a>
                                 <button class="product__button">В корзину</button>
                             </div>
                         </div>
@@ -94,7 +94,7 @@ $novelties = $KotoPes->getNoveltyProducts();
                             <div class="product__wrapper">
                                 <img class="product__image" src="/images/products/<?= $novelty['image'] ?>" alt="Изображение товара" loading="lazy" />
                                 <span class="product__price"><?= $novelty['price'] ?> ₽</span>
-                                <a href="/catalog/<?= $novelty['url_name'] ?>/?id=<?= $novelty['id'] ?>" class="product__name"><?= mb_substr($novelty['name'], 0, 28) . '...' ?></a>
+                                <a href="/product/?id=<?= $novelty['id'] ?>" class="product__name"><?= mb_substr($novelty['name'], 0, 28) . '...' ?></a>
                                 <button class="product__button">В корзину</button>
                             </div>
                         </div>

@@ -1,7 +1,6 @@
 User-agent: *
 Disallow: /core
 Disallow: /cgi-bin
-Disallow: /adminer-4.8.1-mysql.php
 
 User-agent: Googlebot-Image
 Allow: /images/

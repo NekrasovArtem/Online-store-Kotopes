@@ -76,6 +76,10 @@
             </div>
         </section>
     <?php endif; ?>
+    <section class="profile__orders">
+        <a href="./orders">Покупки</a>
+        <a href="./receipts">Чеки</a>
+    </section>
     <div class="profile__div">
         <section class="profile__payments">
             <h3>Способы оплаты:</h3>

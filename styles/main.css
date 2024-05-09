@@ -197,6 +197,7 @@ button {
     max-width: 1920px;
     height: auto;
     max-height: 800px;
+    object-fit: cover;
 }
 
 .poster__pagination {
